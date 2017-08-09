@@ -6,28 +6,39 @@ import br.com.financas.modelo.Movimentacao;
 import br.com.financas.util.JPAUtil;
 
 public class MovimentacaoDAO implements IMovimentacaoDAO{
+	EntityManager em = new JPAUtil().getEntityManager();
+	
 	
 	@Override
 	public void inserir(Movimentacao m){
-		JPAUtil jpa = new JPAUtil();
-		EntityManager em =  jpa.getEntityManager();
-
 		em.getTransaction().begin();
-		em.persist(m);
-		em.getTransaction().commit();
 		
+		em.persist(m);
+		
+		em.getTransaction().commit();
 		em.close();
 	}
 
 	@Override
 	public void excluir(Movimentacao m) {
-		// TODO Auto-generated method stub
+		em.getTransaction().begin();
+		
+		m = em.find(Movimentacao.class, m.getId());
+		em.remove(m);
+		
+		em.getTransaction().commit();
+		em.close();
 		
 	}
 
 	@Override
 	public void alterar(Movimentacao m) {
-		// TODO Auto-generated method stub
+		em.getTransaction().begin();
+		
+		em.merge(m);
+		
+		em.getTransaction().commit();
+		em.close();
 		
 	}
 
@@ -35,5 +46,17 @@ public class MovimentacaoDAO implements IMovimentacaoDAO{
 	public List listar() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Movimentacao pesquisarID(int id) {
+		em.getTransaction().begin();
+		
+		Movimentacao m = em.find(Movimentacao.class, id);
+		
+		em.getTransaction().commit();
+		em.close();
+		return m;
+		
 	}
 }	

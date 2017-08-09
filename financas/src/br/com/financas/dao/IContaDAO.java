@@ -9,6 +9,7 @@ public interface IContaDAO {
 	void inserir(Conta c);
 	void excluir(Conta c);
 	void alterar(Conta c);
+	Conta pesquisarID(int id);
 	List listar();
 	
 }

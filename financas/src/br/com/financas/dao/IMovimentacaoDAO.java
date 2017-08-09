@@ -8,6 +8,7 @@ public interface IMovimentacaoDAO {
 	void inserir(Movimentacao m);
 	void excluir(Movimentacao m);
 	void alterar(Movimentacao m);
+	Movimentacao pesquisarID(int id);
 	List listar();
 	
 }

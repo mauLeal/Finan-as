@@ -1,4 +1,4 @@
-package br.com.financas.util;
+package br.com.financas.teste;
 
 import br.com.financas.dao.ContaDAO;
 import br.com.financas.dao.IContaDAO;
@@ -7,6 +7,7 @@ import br.com.financas.modelo.Conta;
 public class TesteDAO {
 
 	public static void main(String[] args) {
+		//Instancia de dao utilizando conceito de generics
 		IContaDAO dao = new ContaDAO();
 		Conta c = new Conta();
 		c.setTitular("Mauricio Leal");
