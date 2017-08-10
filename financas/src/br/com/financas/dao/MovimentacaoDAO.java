@@ -2,7 +2,8 @@ package br.com.financas.dao;
 
 import java.awt.List;
 import javax.persistence.EntityManager;
-import br.com.financas.modelo.Movimentacao;
+
+import br.com.financas.model.Movimentacao;
 import br.com.financas.util.JPAUtil;
 
 public class MovimentacaoDAO implements IMovimentacaoDAO{

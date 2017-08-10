@@ -1,4 +1,4 @@
-package br.com.financas.modelo;
+package br.com.financas.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,6 @@ public class Conta {
 	private String numero;
 	private String banco;
 	private String agencia;
-	
 	@OneToMany
 	private List<Movimentacao> lista = new ArrayList<Movimentacao>();
 	

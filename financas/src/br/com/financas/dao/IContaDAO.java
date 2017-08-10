@@ -1,8 +1,9 @@
 package br.com.financas.dao;
 
-import java.awt.List;
 
-import br.com.financas.modelo.Conta;
+import java.util.List;
+
+import br.com.financas.model.Conta;
 
 public interface IContaDAO {
 	
@@ -10,6 +11,6 @@ public interface IContaDAO {
 	void excluir(Conta c);
 	void alterar(Conta c);
 	Conta pesquisarID(int id);
-	List listar();
+	List<Conta> listar();
 	
 }

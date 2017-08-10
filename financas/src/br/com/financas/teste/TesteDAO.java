@@ -2,7 +2,7 @@ package br.com.financas.teste;
 
 import br.com.financas.dao.ContaDAO;
 import br.com.financas.dao.IContaDAO;
-import br.com.financas.modelo.Conta;
+import br.com.financas.model.Conta;
 
 public class TesteDAO {
 

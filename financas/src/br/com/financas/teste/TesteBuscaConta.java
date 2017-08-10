@@ -2,7 +2,7 @@ package br.com.financas.teste;
 
 import javax.persistence.EntityManager;
 
-import br.com.financas.modelo.Conta;
+import br.com.financas.model.Conta;
 import br.com.financas.util.JPAUtil;
 
 public class TesteBuscaConta {

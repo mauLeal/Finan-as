@@ -2,7 +2,7 @@ package br.com.financas.util;
 
 import javax.persistence.EntityManager;
 
-import br.com.financas.modelo.Conta;
+import br.com.financas.model.Conta;
 
 public class PopulaConta {
 

@@ -4,8 +4,8 @@ import java.util.Calendar;
 
 import br.com.financas.dao.ContaDAO;
 import br.com.financas.dao.MovimentacaoDAO;
-import br.com.financas.modelo.Conta;
-import br.com.financas.modelo.Movimentacao;
+import br.com.financas.model.Conta;
+import br.com.financas.model.Movimentacao;
 import br.com.financas.util.TipoMovimentacal;
 
 public class TesteJPARelacionamento {
@@ -24,13 +24,9 @@ public class TesteJPARelacionamento {
 		m.setDescricao("Churrascaria");
 		m.setTipo(TipoMovimentacal.SAIDA);
 		m.setValor(200d);
+		m.setConta(c);
 		
-		
-		
-		
-		
-		
-		
-		
+		cdao.inserir(c);
+		mdao.inserir(m);
 	}
 }
