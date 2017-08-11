@@ -3,6 +3,7 @@ package br.com.financas.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import br.com.financas.model.Categoria;
 import br.com.financas.util.JPAUtil;
@@ -57,8 +58,15 @@ public class CategoriaDAO implements ICategoriaDAO {
 
 	@Override
 	public List<Categoria> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		
+		Query query = em.createQuery("select c from Categoria c");
+		List<Categoria> lista = query.getResultList();
+		
+		em.getTransaction().commit();
+		em.close();
+		
+		return lista;
 	}
 
 }

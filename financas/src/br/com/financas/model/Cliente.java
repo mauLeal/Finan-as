@@ -16,9 +16,24 @@ public class Cliente {
 	private String nome;
 	private String profissao;
 	private String endereco;
+	private String cpf;
 	@JoinColumn(unique=true)
 	@OneToOne
 	private Conta conta;
+	
+	/**
+	 * @return the cpf
+	 */
+	public String getCpf() {
+		return cpf;
+	}
+
+	/**
+	 * @param cpf the cpf to set
+	 */
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	/**
 	 * @return the nome
@@ -88,5 +103,13 @@ public class Cliente {
 	 */
 	public void setConta(Conta conta) {
 		this.conta = conta;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: "+this.getNome()+
+				"\nEndereço: "+this.getEndereco()+
+				"\nCPF: "+this.getCpf()+
+				"\nProfissão: "+this.getProfissao();
 	}
 }

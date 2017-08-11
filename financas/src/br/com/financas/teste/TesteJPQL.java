@@ -1,16 +1,14 @@
 package br.com.financas.teste;
 
-import java.util.List;
-
-import br.com.financas.dao.ContaDAO;
-import br.com.financas.model.Conta;
+import br.com.financas.dao.ClienteDAO;
+import br.com.financas.model.Cliente;
 
 public class TesteJPQL {
 	public static void main(String[] args) {
-		List<Conta> sasoa = new ContaDAO().listar();
-		for (Conta c : sasoa) {
-			System.out.println(c.getTitular());
-		}
+		ClienteDAO dao = new ClienteDAO();
+		Cliente c = dao.pesquisarCPF("704205332-09");
+		boolean flag = dao.verificaDuplicidade(c);
+		
+		System.out.println("TRUE"+flag);
 	}
-
 }

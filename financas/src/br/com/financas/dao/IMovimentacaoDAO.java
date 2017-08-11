@@ -1,6 +1,6 @@
 package br.com.financas.dao;
 
-import java.awt.List;
+import java.util.List;
 
 import br.com.financas.model.Movimentacao;
 
@@ -9,6 +9,6 @@ public interface IMovimentacaoDAO {
 	void excluir(Movimentacao m);
 	void alterar(Movimentacao m);
 	Movimentacao pesquisarID(int id);
-	List listar();
+	List<Movimentacao> listar();
 	
 }

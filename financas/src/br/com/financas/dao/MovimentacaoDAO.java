@@ -1,7 +1,9 @@
 package br.com.financas.dao;
 
-import java.awt.List;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import br.com.financas.model.Movimentacao;
 import br.com.financas.util.JPAUtil;
@@ -44,9 +46,15 @@ public class MovimentacaoDAO implements IMovimentacaoDAO{
 	}
 
 	@Override
-	public List listar() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Movimentacao> listar() {
+		em.getTransaction().begin();
+		
+		Query query = em.createQuery("select m from Movimentacao m");
+		List<Movimentacao> lista = query.getResultList();
+		
+		em.getTransaction().commit();
+		
+		return lista;
 	}
 
 	@Override

@@ -36,15 +36,15 @@ public class ContaDAO implements IContaDAO {
 
 	public List<Conta> listar() {
 		em.getTransaction().begin();
-		String jpql = "SELECT C FROM CONTA C";
+		String jpql = "select c from Conta c";
 		
 		Query query = em.createQuery(jpql); 
-		List<Conta> contas = query.getResultList();
+		List<Conta> lista = query.getResultList();
 		
 		em.getTransaction().commit();
 		em.close();
 		
-		return contas;
+		return lista;
 	}
 
 	public void alterar(Conta c) {
