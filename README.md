@@ -1,3 +1,3 @@
-# financas
-java
-hibernate
+# crud
+*java
+*hibernate
